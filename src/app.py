@@ -1,4 +1,3 @@
-import datetime
 import time
 import tweepy
 
@@ -25,8 +24,8 @@ def check_unfollowers():
     while True:
         current_followers_ids = fetch_follower_ids(api, my_username)
         global PREVIOUS_FOLLOWERS_IDS
-        print("{} Previous followers count:{}, Current followers count:{}"
-              .format(datetime.datetime.now(), len(PREVIOUS_FOLLOWERS_IDS), len(current_followers_ids)))
+        print("Previous followers count:{}, Current followers count:{}"
+              .format(len(PREVIOUS_FOLLOWERS_IDS), len(current_followers_ids)))
 
         if PREVIOUS_FOLLOWERS_IDS:
             unfollowers = get_unfollower_ids(current_followers_ids)
@@ -36,7 +35,7 @@ def check_unfollowers():
                 print(message)
                 api.send_direct_message(screen_name=my_username, text=message)
         else:
-            print("{} Your followers saved.".format(datetime.datetime.now()))
+            print("followers saved...")
 
         PREVIOUS_FOLLOWERS_IDS = current_followers_ids
         time.sleep(60 * 5)
@@ -61,7 +60,7 @@ def fetch_follower_ids(api, username):
     Fetches specified username's followers' id
     '''
     followers = []
-    print("{} Fetching followers...".format(datetime.datetime.now()))
+    print("fetching followers...")
     for page in tweepy.Cursor(api.followers_ids, screen_name=username).pages():
         followers.extend(page)
     return followers
