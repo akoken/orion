@@ -2,7 +2,7 @@ FROM python:3.4-alpine
 
 WORKDIR /app
 
-ADD . /app
+ADD /src /app
 
 RUN pip install tweepy
 
