@@ -4,6 +4,6 @@ WORKDIR /app
 
 ADD /src /app
 
-RUN pip install tweepy
+RUN pip3 install tweepy
 
 CMD ["python", "app.py"]
