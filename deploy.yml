@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: orion-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orion
+  template:
+    metadata:
+      labels:
+        app: orion
+    spec:
+      containers:
+        - name: orion-pod
+          image: akoken/orion:1.0
