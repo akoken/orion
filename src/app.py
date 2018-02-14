@@ -1,6 +1,7 @@
 import datetime
 import time
 import tweepy
+import os
 
 PREVIOUS_FOLLOWERS_IDS = []
 
@@ -11,16 +12,16 @@ def check_unfollowers():
     and sends direct message to you.
     '''
 
-    consumer_key = 'your consumer key here'
-    consumer_secret = 'your consumer secret here'
-    access_token = 'your access token here'
-    access_token_secret = 'your access token secret here'
+    consumer_key = os.environ['CONSUMER_KEY']
+    consumer_secret = os.environ['CONSUMER_SECRET']
+    access_token = os.environ['ACCESS_TOKEN']
+    access_token_secret = os.environ['ACCESS_SECRET']
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
 
-    my_username = "your username here"
+    my_username = os.environ['USERNAME']
 
     while True:
         current_followers_ids = fetch_follower_ids(api, my_username)

@@ -14,4 +14,15 @@ spec:
     spec:
       containers:
         - name: orion-pod
-          image: akoken/orion:1.0
+          image: orion:1.0
+          env:
+            - name: USERNAME
+              value: your username
+            - name: CONSUMER_KEY
+              value: your consumer key
+            - name: CONSUMER_SECRET
+              value: your consumer secret
+            - name: ACCESS_TOKEN
+              value: your access token
+            - name: ACCESS_SECRET
+              value: your access secret
