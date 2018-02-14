@@ -39,7 +39,7 @@ orion:1.0
 
 ## Kubernetes
 
-If you have a Kubernetes cluster, you can also use deploy.yml file to run the application.
+If you have a Kubernetes cluster, you can also use deploy.yml file to run the application:
 
 ```
 kubectl create -f deploy.yml
