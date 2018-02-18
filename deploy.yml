@@ -13,7 +13,7 @@ spec:
         app: orion
     spec:
       containers:
-        - name: orion-pod
+        - name: orion-container
           image: orion:1.0
           env:
             - name: USERNAME
