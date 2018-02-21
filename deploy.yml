@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orion-container
-          image: orion:1.0
+          image: orion:latest
           env:
             - name: USERNAME
               value: your username
